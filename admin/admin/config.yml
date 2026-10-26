@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: santoshdakshfzd-ops/broverseas-website
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "products"
+    label: "Bridal Chooda Products"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Design Title", name: "title", widget: "string" }
+      - { label: "Selling Price (₹)", name: "price", widget: "number" }
+      - { label: "Original / MRP (₹)", name: "originalPrice", widget: "number" }
+      - { label: "Product Photo", name: "image", widget: "image" }
+      - { label: "Badge / Tag", name: "tag", widget: "select", options: ["Best Seller", "Royal Bridal", "New Arrival", "Trending"], default: "Best Seller" }
+      - { label: "Available Wrist Sizes", name: "sizes", widget: "list", default: ["2.4", "2.6", "2.8"] }
+      - { label: "Short Description", name: "description", widget: "text", required: false }
