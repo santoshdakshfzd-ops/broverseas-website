@@ -351,7 +351,7 @@
         if (!putRes.ok) throw new Error("Photo upload failed. Check GitHub token.");
 
         // Relative path works immediately once deployed by Cloudflare Pages
-        const relativeUrl = `./${imagePath}`;
+        const relativeUrl = `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${imagePath}`;
         document.getElementById("p-image").value = relativeUrl;
         
         // Show instant local preview right away
