@@ -9,6 +9,17 @@
   },
   "products": [
     {
+      "id": "BRO-446",
+      "title": "ROYAL KERITAGE KUNDAN CHOODA",
+      "category": "kundan",
+      "badge": "Top Saller",
+      "priceInr": 3999,
+      "compareInr": 9999,
+      "priceUsd": 62,
+      "compareUsd": 500,
+      "image": "https://raw.githubusercontent.com/santoshdakshfzd-ops/broverseas-website/main/images/chooda-1794501412582.jpg"
+    },
+    {
       "id": "BRO-167",
       "title": "Royal Heritage Kundan Chooda",
       "category": "kundan",
