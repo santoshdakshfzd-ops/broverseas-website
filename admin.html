@@ -242,7 +242,7 @@
 
     function unlockAdmin() {
       const pin = document.getElementById("pin-input").value;
-      const savedPin = localStorage.getItem("bro_admin_pin") || "1234";
+      const savedPin = localStorage.getItem("bro_admin_pin") || "7978";
       if (pin === savedPin) {
         document.getElementById("lock-screen").classList.add("hidden");
         document.getElementById("admin-app").classList.remove("hidden");
