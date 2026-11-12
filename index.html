@@ -125,12 +125,9 @@
               <span>Direct Manufacturer • Firozabad, India</span>
             </div>
 
-            <h1 id="hero-title" class="font-serif text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[1.12] text-charcoal">
-              Heirloom Bridal Chooda, <br>
-              <span class="italic font-normal text-sindoor">Handcrafted for Your Story.</span>
-            </h1>
+            <h1 id="hero-title" class="font-serif text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[1.12] text-charcoal min-h-[110px]"></h1>
 
-            <p id="hero-subtitle" class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+<p id="hero-subtitle" class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal min-h-[60px]"></p>
               Authentic kundan, velvet, and traditional bridal chooda sets crafted by master artisans in Firozabad. Custom-sized to your wrist and delivered safely across India and worldwide.
             </p>
 
@@ -497,7 +494,13 @@
         if (data && data.settings) {
           SITE_CONFIG = { ...SITE_CONFIG, ...data.settings };
           document.getElementById("dynamic-announcement").innerText = SITE_CONFIG.announcement;
-          if (SITE_CONFIG.heroTitle) document.getElementById("hero-title").innerText = SITE_CONFIG.heroTitle;
+         const titleText = SITE_CONFIG.heroTitle || "Heirloom Bridal Chooda, Handcrafted for Your Story.";
+          if (titleText.includes(",")) {
+            const parts = titleText.split(",");
+            document.getElementById("hero-title").innerHTML = `${parts[0]}, <br><span class="italic font-normal text-sindoor">${parts.slice(1).join(",")}</span>`;
+          } else {
+            document.getElementById("hero-title").innerText = titleText;
+          }
           if (SITE_CONFIG.heroSubtitle) document.getElementById("hero-subtitle").innerText = SITE_CONFIG.heroSubtitle;
           if (SITE_CONFIG.etsyUrl) document.getElementById("etsy-store-link").href = SITE_CONFIG.etsyUrl;
           if (SITE_CONFIG.whatsapp) {
