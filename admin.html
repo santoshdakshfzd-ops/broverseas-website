@@ -21,9 +21,9 @@
       </div>
       <div>
         <h1 class="text-xl font-bold">B.R Overseas Admin</h1>
-        <p class="text-xs text-stone-500 mt-1">Default PIN: <strong>1234</strong></p>
+        <p class="text-xs text-stone-500 mt-1">Enter your Admin PIN to continue</p>
       </div>
-      <input type="password" id="pin-input" maxlength="6" placeholder="Enter PIN" class="w-full text-center tracking-[0.5em] text-lg font-bold py-3 rounded-xl border border-stone-300 focus:border-stone-900 focus:outline-none" />
+      <input type="password" id="pin-input" maxlength="6" placeholder="••••" onkeydown="if(event.key==='Enter') unlockAdmin()" class="w-full text-center tracking-[0.5em] text-lg font-bold py-3 rounded-xl border border-stone-300 focus:border-stone-900 focus:outline-none" />
       <button onclick="unlockAdmin()" class="w-full py-3 rounded-xl bg-stone-900 hover:bg-red-900 text-white font-semibold text-sm transition">
         Unlock Dashboard
       </button>
@@ -37,7 +37,7 @@
     <div class="bg-white p-5 rounded-2xl border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
       <div>
         <h1 class="text-xl font-bold text-stone-900">B.R Overseas • No-Code Control Panel</h1>
-        <p class="text-xs text-stone-500">Manage INR & USD listings and publish directly to <strong>broverseas.in</strong></p>
+        <p class="text-xs text-stone-500">Upload JPG photos directly & publish to <strong>broverseas.in</strong></p>
       </div>
       <div class="flex flex-wrap items-center gap-2.5">
         <button onclick="openGithubModal()" class="px-4 py-2.5 rounded-xl border border-stone-300 hover:border-stone-900 text-xs font-semibold flex items-center gap-2">
@@ -55,7 +55,7 @@
     <!-- Tabs -->
     <div class="flex gap-2 border-b border-stone-200 pb-3">
       <button onclick="switchTab('products')" id="tab-products" class="px-4 py-2 rounded-lg bg-stone-900 text-white text-xs font-semibold">Products & Dual Pricing</button>
-      <button onclick="switchTab('settings')" id="tab-settings" class="px-4 py-2 rounded-lg bg-white border border-stone-200 text-stone-600 text-xs font-semibold">Store Info & Etsy Link</button>
+      <button onclick="switchTab('settings')" id="tab-settings" class="px-4 py-2 rounded-lg bg-white border border-stone-200 text-stone-600 text-xs font-semibold">Store Info, Etsy & PIN</button>
     </div>
 
     <!-- TAB 1: PRODUCTS -->
@@ -110,9 +110,27 @@
           <p class="text-[10px] text-stone-500">Tip: USD price auto-includes ~$22 international air shipping buffer.</p>
         </div>
 
-        <div>
-          <label class="block text-xs font-semibold mb-1">Product Image URL *</label>
-          <input type="url" id="p-image" placeholder="https://..." class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 text-xs" />
+        <!-- DIRECT JPG/PNG FILE UPLOAD BOX -->
+        <div class="p-4 rounded-xl border-2 border-dashed border-stone-300 bg-stone-50/70 space-y-3">
+          <div class="flex items-center justify-between">
+            <label class="block text-xs font-bold text-stone-800">Product Photo (JPG / PNG) *</label>
+            <span id="upload-status-tag" class="text-[11px] font-semibold text-stone-500">No file chosen</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <img id="p-preview" src="https://placehold.co/120x120/EFECE6/78716C?text=Photo" alt="Preview" class="w-16 h-16 rounded-lg object-cover border border-stone-300 bg-white shrink-0" />
+            <div class="flex-1">
+              <label for="p-file-input" id="upload-btn-label" class="cursor-pointer w-full py-2.5 px-3 rounded-lg bg-white border border-stone-300 hover:border-stone-900 text-xs font-semibold text-stone-800 flex items-center justify-center gap-2 shadow-sm transition">
+                <i class="fa-solid fa-camera text-red-800"></i>
+                <span>Select JPG / PNG Photo</span>
+              </label>
+              <input type="file" id="p-file-input" accept="image/jpeg,image/png,image/webp" onchange="handleDirectImageUpload(event)" class="hidden" />
+              <p class="text-[10px] text-stone-500 mt-1.5">Auto-uploads directly to your website storage.</p>
+            </div>
+          </div>
+
+          <!-- Hidden URL holder (auto-filled on upload, or editable if needed) -->
+          <input type="hidden" id="p-image" />
         </div>
 
         <div class="flex gap-2 pt-2">
@@ -138,9 +156,9 @@
 
     </div>
 
-    <!-- TAB 2: STORE SETTINGS -->
-    <div id="panel-settings" class="hidden bg-white p-6 rounded-2xl border border-stone-200 max-w-2xl space-y-4">
-      <h2 class="font-bold text-base">Storefront & Trust Details</h2>
+    <!-- TAB 2: STORE SETTINGS & PIN -->
+    <div id="panel-settings" class="hidden bg-white p-6 rounded-2xl border border-stone-200 max-w-2xl space-y-5">
+      <h2 class="font-bold text-base">Storefront, Etsy & Security Settings</h2>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
         <div>
@@ -167,10 +185,19 @@
           <label class="block font-semibold mb-1">Hero Subtitle</label>
           <textarea id="s-hero-subtitle" rows="2" class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300">Authentic kundan, velvet, and traditional bridal chooda sets crafted by master artisans in Firozabad. Custom-sized to your wrist and delivered safely across India and worldwide.</textarea>
         </div>
+
+        <!-- ADMIN PIN CHANGE -->
+        <div class="sm:col-span-2 p-4 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+          <label class="block font-bold text-stone-800">Admin Login PIN (4 to 6 digits)</label>
+          <div class="flex gap-2">
+            <input type="text" id="s-admin-pin" maxlength="6" placeholder="1234" class="w-40 px-3.5 py-2 rounded-lg border border-stone-300 font-bold tracking-widest" />
+            <span class="text-[11px] text-stone-500 self-center">Works across all phones & laptops once published!</span>
+          </div>
+        </div>
       </div>
 
-      <button onclick="saveStoreSettings()" class="px-6 py-3 rounded-xl bg-stone-900 text-white text-xs font-semibold">
-        Save Store Settings
+      <button onclick="saveStoreSettings()" class="px-6 py-3 rounded-xl bg-stone-900 hover:bg-red-900 text-white text-xs font-semibold">
+        Save Store & PIN Settings
       </button>
     </div>
 
@@ -215,7 +242,8 @@
         etsyUrl: "https://www.etsy.com",
         announcement: "Registered Trademark Brand • Handcrafted in Firozabad, India",
         heroTitle: "Heirloom Bridal Chooda, Handcrafted for Your Story.",
-        heroSubtitle: "Authentic kundan, velvet, and traditional bridal chooda sets crafted by master artisans in Firozabad. Custom-sized to your wrist and delivered safely across India and worldwide."
+        heroSubtitle: "Authentic kundan, velvet, and traditional bridal chooda sets crafted by master artisans in Firozabad. Custom-sized to your wrist and delivered safely across India and worldwide.",
+        adminPin: "1234"
       },
       products: [
         {
@@ -232,24 +260,38 @@
       ]
     };
 
+    // Sync live PIN on load so cross-device PIN changes work immediately
+    (async function syncLivePinOnBoot() {
+      try {
+        const res = await fetch('./site-data.json?t=' + Date.now());
+        if (res.ok) {
+          const live = await res.json();
+          if (live && live.settings && live.settings.adminPin) {
+            storeData = live;
+            localStorage.setItem('bro_store_data', JSON.stringify(storeData));
+          }
+        }
+      } catch (e) {}
+    })();
+
     function showToast(msg, isError = false) {
       const b = document.getElementById("status-banner");
       b.innerText = msg;
       b.className = `p-4 rounded-xl text-xs font-semibold ${isError ? 'bg-red-50 text-red-800 border border-red-200' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'}`;
       b.classList.remove("hidden");
-      setTimeout(() => b.classList.add("hidden"), 4000);
+      setTimeout(() => b.classList.add("hidden"), 4500);
     }
 
     function unlockAdmin() {
-      const pin = document.getElementById("pin-input").value;
-      const savedPin = localStorage.getItem("bro_admin_pin") || "7978";
-      if (pin === savedPin) {
+      const pin = document.getElementById("pin-input").value.trim();
+      const activePin = (storeData.settings && storeData.settings.adminPin) ? String(storeData.settings.adminPin) : "1234";
+      if (pin === activePin) {
         document.getElementById("lock-screen").classList.add("hidden");
         document.getElementById("admin-app").classList.remove("hidden");
         loadFormFields();
         renderAdminProducts();
       } else {
-        alert("Incorrect PIN (Default is 1234)");
+        alert("Incorrect PIN. Please try again.");
       }
     }
 
@@ -267,6 +309,98 @@
       }
     }
 
+    // ---------------------------------------------------------
+    // DIRECT JPG/PNG UPLOAD TO GITHUB IMAGES FOLDER (NO LINKS!)
+    // ---------------------------------------------------------
+    async function handleDirectImageUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const cfg = JSON.parse(localStorage.getItem("bro_gh_cfg") || "{}");
+      if (!cfg.token || !cfg.owner || !cfg.repo) {
+        openGithubModal();
+        showToast("Please connect your GitHub Token first to upload photos directly.", true);
+        return;
+      }
+
+      const statusTag = document.getElementById("upload-status-tag");
+      const btnLabel = document.getElementById("upload-btn-label");
+      statusTag.innerText = "Optimizing & Uploading...";
+      statusTag.className = "text-[11px] font-semibold text-amber-700";
+      btnLabel.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-red-800"></i> <span>Uploading Photo...</span>`;
+
+      try {
+        // Compress & resize photo cleanly (max 1000px) so website loads super fast
+        const compressedBase64 = await compressImageToJpegBase64(file, 1000, 0.85);
+        const fileName = `chooda-${Date.now()}.jpg`;
+        const imagePath = `images/${fileName}`;
+        const apiUrl = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${imagePath}`;
+
+        const putRes = await fetch(apiUrl, {
+          method: "PUT",
+          headers: {
+            Authorization: `token ${cfg.token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: `Upload product photo ${fileName}`,
+            content: compressedBase64
+          })
+        });
+
+        if (!putRes.ok) throw new Error("Photo upload failed. Check GitHub token.");
+
+        // Relative path works immediately once deployed by Cloudflare Pages
+        const relativeUrl = `./${imagePath}`;
+        document.getElementById("p-image").value = relativeUrl;
+        
+        // Show instant local preview right away
+        document.getElementById("p-preview").src = `data:image/jpeg;base64,${compressedBase64}`;
+        statusTag.innerText = "Uploaded ✓";
+        statusTag.className = "text-[11px] font-bold text-emerald-700";
+        showToast("Photo uploaded! Fill price & click 'Save Product to List'.");
+      } catch (err) {
+        statusTag.innerText = "Upload Failed";
+        statusTag.className = "text-[11px] font-bold text-red-700";
+        showToast(err.message, true);
+      } finally {
+        btnLabel.innerHTML = `<i class="fa-solid fa-camera text-red-800"></i> <span>Change JPG / PNG Photo</span>`;
+      }
+    }
+
+    function compressImageToJpegBase64(file, maxDimension, quality) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            let w = img.width;
+            let h = img.height;
+            if (w > maxDimension || h > maxDimension) {
+              if (w > h) {
+                h = Math.round((h * maxDimension) / w);
+                w = maxDimension;
+              } else {
+                w = Math.round((w * maxDimension) / h);
+                h = maxDimension;
+              }
+            }
+            const canvas = document.createElement("canvas");
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, w, h);
+            const dataUrl = canvas.toDataURL("image/jpeg", quality);
+            resolve(dataUrl.split(",")[1]);
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
     function saveProduct() {
       const title = document.getElementById("p-title").value.trim();
       const priceInr = Number(document.getElementById("p-price-inr").value);
@@ -274,7 +408,7 @@
       const image = document.getElementById("p-image").value.trim();
 
       if (!title || !priceInr || !priceUsd || !image) {
-        showToast("Please fill Title, INR Price, USD Price, and Image URL.", true);
+        showToast("Please enter Title, INR Price, USD Price, and select a Photo.", true);
         return;
       }
 
@@ -300,7 +434,7 @@
       localStorage.setItem('bro_store_data', JSON.stringify(storeData));
       resetForm();
       renderAdminProducts();
-      showToast("Product saved locally! Click 'Publish Live to Website' to push to broverseas.in.");
+      showToast("Product added to list! Now click 'Publish Live to Website'.");
     }
 
     function editProduct(idx) {
@@ -315,13 +449,15 @@
       document.getElementById("p-price-usd").value = p.priceUsd;
       document.getElementById("p-compare-usd").value = p.compareUsd;
       document.getElementById("p-image").value = p.image;
+      document.getElementById("p-preview").src = p.image;
+      document.getElementById("upload-status-tag").innerText = "Current Photo";
     }
 
     function deleteProduct(idx) {
       storeData.products.splice(idx, 1);
       localStorage.setItem('bro_store_data', JSON.stringify(storeData));
       renderAdminProducts();
-      showToast("Product removed. Remember to click Publish Live.");
+      showToast("Product removed. Click 'Publish Live to Website' to update live site.");
     }
 
     function resetForm() {
@@ -333,6 +469,10 @@
       document.getElementById("p-price-usd").value = "";
       document.getElementById("p-compare-usd").value = "";
       document.getElementById("p-image").value = "";
+      document.getElementById("p-file-input").value = "";
+      document.getElementById("p-preview").src = "https://placehold.co/120x120/EFECE6/78716C?text=Photo";
+      document.getElementById("upload-status-tag").innerText = "No file chosen";
+      document.getElementById("upload-status-tag").className = "text-[11px] font-semibold text-stone-500";
     }
 
     function renderAdminProducts() {
@@ -366,19 +506,22 @@
       document.getElementById("s-announcement").value = s.announcement || "";
       document.getElementById("s-hero-title").value = s.heroTitle || "";
       document.getElementById("s-hero-subtitle").value = s.heroSubtitle || "";
+      document.getElementById("s-admin-pin").value = s.adminPin || "1234";
     }
 
     function saveStoreSettings() {
+      const newPin = document.getElementById("s-admin-pin").value.trim() || "1234";
       storeData.settings = {
         whatsapp: document.getElementById("s-whatsapp").value.trim(),
         upi: document.getElementById("s-upi").value.trim(),
         etsyUrl: document.getElementById("s-etsy").value.trim(),
         announcement: document.getElementById("s-announcement").value.trim(),
         heroTitle: document.getElementById("s-hero-title").value.trim(),
-        heroSubtitle: document.getElementById("s-hero-subtitle").value.trim()
+        heroSubtitle: document.getElementById("s-hero-subtitle").value.trim(),
+        adminPin: newPin
       };
       localStorage.setItem('bro_store_data', JSON.stringify(storeData));
-      showToast("Store settings saved! Click 'Publish Live to Website' to update live site.");
+      showToast("Store settings & new PIN saved! Click 'Publish Live to Website' to apply.");
     }
 
     // GITHUB API INTEGRATION
@@ -438,7 +581,7 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            message: "Update store listings via Admin Panel",
+            message: "Update store listings & settings via Admin Panel",
             content: contentBase64,
             ...(sha ? { sha } : {})
           })
