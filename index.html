@@ -5,133 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B.R Overseas | Handcrafted Bridal Chooda & Bangles Firozabad</title>
   
-  <!-- Fonts: Cinzel Decorative / Playfair / Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            royal: {
-              950: '#120205',
-              900: '#23050A',
-              850: '#340810',
-              800: '#4A0C17',
-              700: '#681120'
-            },
-            gold: {
-              300: '#FDE08B',
-              400: '#F7C948',
-              500: '#DFAB35',
-              600: '#B8861E',
-              700: '#8C6311'
-            }
+            alabaster: '#FAF9F6',
+            charcoal: '#1A1A1A',
+            sindoor: '#9B1B27',
+            sindoorDark: '#78121C',
+            champagne: '#B08D57',
+            stoneBorder: '#E6E2DC'
           },
           fontFamily: {
-            serif: ['"Playfair Display"', 'serif'],
-            cinzel: ['Cinzel', 'serif'],
-            sans: ['Montserrat', 'sans-serif']
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
           }
         }
       }
     }
   </script>
-
   <style>
-    /* ========================================================
-       VERTICAL NEON SCROLL LINE & GLOW TRACKER
-       ======================================================== */
-    .vertical-neon-rail {
-      position: fixed;
-      left: 14px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: rgba(247, 201, 72, 0.12);
-      z-index: 50;
-      pointer-events: none;
+    body {
+      background-color: #FAF9F6;
+      color: #1A1A1A;
     }
-    @media (min-width: 768px) {
-      .vertical-neon-rail {
-        left: 28px;
-        width: 3px;
-      }
-    }
-
-    #vertical-neon-progress {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 0%;
-      background: linear-gradient(180deg, #FDE08B 0%, #F7C948 40%, #E11D48 100%);
-      box-shadow: 0 0 14px #F7C948, 0 0 28px #DFAB35, 0 0 40px #E11D48;
-      transition: height 0.05s linear;
-    }
-
-    #vertical-neon-orb {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 14px;
-      height: 14px;
-      border-radius: 9999px;
+    .editorial-card {
       background: #FFFFFF;
-      box-shadow: 0 0 10px #FFFFFF, 0 0 20px #F7C948, 0 0 35px #E11D48;
-      transition: top 0.05s linear;
+      border: 1px solid #E6E2DC;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    /* Ambient Gold Shimmer Typography */
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #FFF6D6 0%, #F7C948 45%, #DFAB35 75%, #B8861E 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .editorial-card:hover {
+      border-color: #B08D57;
+      box-shadow: 0 20px 40px -15px rgba(26, 26, 26, 0.08);
+      transform: translateY(-4px);
     }
-    .neon-gold-text {
-      text-shadow: 0 0 15px rgba(247, 201, 72, 0.6), 0 0 30px rgba(223, 171, 53, 0.3);
-    }
-
-    /* Glassmorphism Luxury Styling */
-    .glass-card {
-      background: rgba(35, 5, 10, 0.78);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(247, 201, 72, 0.22);
-    }
-    .glass-card:hover {
-      border-color: rgba(247, 201, 72, 0.55);
-      box-shadow: 0 12px 35px -8px rgba(247, 201, 72, 0.25);
-    }
-
-    /* Shimmer Button */
-    .shimmer-btn {
-      position: relative;
-      overflow: hidden;
-    }
-    .shimmer-btn::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -60%;
-      width: 40%;
-      height: 200%;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.45), transparent);
-      transform: rotate(30deg);
-      transition: all 0.75s ease;
-    }
-    .shimmer-btn:hover::after {
-      left: 130%;
-    }
-
-    /* Marquee ribbon */
     @keyframes marquee {
       0% { transform: translateX(0%); }
       100% { transform: translateX(-50%); }
@@ -139,165 +52,126 @@
     .animate-marquee {
       display: inline-flex;
       white-space: nowrap;
-      animation: marquee 30s linear infinite;
+      animation: marquee 32s linear infinite;
     }
     .animate-marquee:hover {
       animation-play-state: paused;
     }
   </style>
 </head>
+<body class="font-sans antialiased selection:bg-sindoor selection:text-white overflow-x-hidden">
 
-<body class="bg-royal-950 text-stone-200 font-sans antialiased selection:bg-gold-500 selection:text-royal-950 min-h-screen relative overflow-x-hidden pl-7 md:pl-14">
-
-  <!-- ========================================================
-       1. VERTICAL GLOWING NEON SCROLL LINE (Requested Feature)
-       ======================================================== -->
-  <div class="vertical-neon-rail">
-    <div id="vertical-neon-progress"></div>
-    <div id="vertical-neon-orb" style="top: 0%;"></div>
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-charcoal text-alabaster py-2.5 text-xs tracking-wider overflow-hidden border-b border-stone-800">
+    <div class="animate-marquee flex items-center space-x-12" id="announcement-ticker">
+      <span><i class="fa-solid fa-certificate text-champagne mr-2"></i> <span id="dynamic-announcement">Registered Trademark Brand • Handcrafted in Firozabad, India</span></span>
+      <span><i class="fa-solid fa-truck-fast text-champagne mr-2"></i> Free Express Shipping in India | Worldwide DHL/FedEx Delivery</span>
+      <span><i class="fa-brands fa-etsy text-champagne mr-2"></i> Trusted International Bridal Seller • Export Grade Protective Packaging</span>
+      <span><i class="fa-solid fa-certificate text-champagne mr-2"></i> Registered Trademark Brand • Handcrafted in Firozabad, India</span>
+      <span><i class="fa-solid fa-truck-fast text-champagne mr-2"></i> Free Express Shipping in India | Worldwide DHL/FedEx Delivery</span>
+    </div>
   </div>
 
-  <!-- Background Ambient Particles Canvas -->
-  <canvas id="sparkle-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
-
-  <!-- Top Announcement Bar -->
-  <aside class="relative z-40 bg-gradient-to-r from-royal-900 via-gold-700/80 to-royal-900 py-2 border-b border-gold-500/30 overflow-hidden text-xs md:text-sm font-medium tracking-wider text-amber-100 shadow-md">
-    <div class="animate-marquee flex items-center space-x-12">
-      <span class="flex items-center gap-2"><i class="fa-solid fa-gem text-gold-400"></i> Pure Handcrafted Luxury from Firozabad (The Glass City)</span>
-      <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-gold-400"></i> Free Express Shipping across India above ₹1,499</span>
-      <span class="flex items-center gap-2"><i class="fa-solid fa-lock text-gold-400"></i> 100% Secure Payment Checkout (UPI, Cards, NetBanking)</span>
-      <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-gold-400"></i> Worldwide Delivery Available (UK, USA, Canada, UAE)</span>
-      <span class="flex items-center gap-2"><i class="fa-solid fa-tape text-gold-400"></i> Custom Wrist Sizing Guarantee</span>
-
-      <!-- Duplicate for infinite ticker -->
-      <span class="flex items-center gap-2"><i class="fa-solid fa-gem text-gold-400"></i> Pure Handcrafted Luxury from Firozabad (The Glass City)</span>
-      <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-gold-400"></i> Free Express Shipping across India above ₹1,499</span>
-      <span class="flex items-center gap-2"><i class="fa-solid fa-lock text-gold-400"></i> 100% Secure Payment Checkout (UPI, Cards, NetBanking)</span>
-      <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-gold-400"></i> Worldwide Delivery Available (UK, USA, Canada, UAE)</span>
-    </div>
-  </aside>
-
-  <!-- Main Navigation Bar -->
-  <header class="sticky top-0 z-40 bg-royal-950/85 backdrop-blur-md border-b border-gold-500/20">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stoneBorder">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="#" class="flex flex-col group">
-        <span class="font-cinzel text-xl sm:text-2xl md:text-3xl font-extrabold tracking-widest text-gold-400 group-hover:neon-gold-text transition-all">
-          B.R OVERSEAS
+      <!-- Brand Identity -->
+      <a href="#" class="flex flex-col">
+        <span class="font-serif text-2xl sm:text-3xl font-bold tracking-[0.14em] text-charcoal uppercase">
+          B.R Overseas
         </span>
-        <span class="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase text-stone-400 font-medium">
-          Firozabad • Royal Heritage Bangles
+        <span class="text-[9px] sm:text-[10px] tracking-[0.25em] uppercase text-stone-500 font-medium">
+          Firozabad • Fine Bridal Bangles
         </span>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-8 text-xs lg:text-sm uppercase tracking-wider font-medium text-stone-300">
-        <a href="#collection" class="hover:text-gold-400 transition-colors">Bridal Chooda</a>
-        <a href="#collection" class="hover:text-gold-400 transition-colors">Kundan Karas</a>
-        <a href="#size-guide" class="hover:text-gold-400 transition-colors">Size Guide</a>
-        <a href="#why-us" class="hover:text-gold-400 transition-colors">Why Choose Us</a>
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.15em] font-semibold text-stone-600">
+        <a href="#collection" class="hover:text-sindoor transition-colors">Collection</a>
+        <a href="#size-guide" class="hover:text-sindoor transition-colors">Size Guide</a>
+        <a href="#heritage" class="hover:text-sindoor transition-colors">Our Heritage</a>
       </nav>
 
-      <!-- Action Group -->
-      <div class="flex items-center gap-3">
-        <button onclick="openCheckoutModal(PRODUCTS_DATABASE[0])" class="shimmer-btn px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-royal-950 font-bold text-xs uppercase tracking-wider shadow-lg hover:scale-105 transition-all flex items-center gap-2">
-          <i class="fa-solid fa-bag-shopping"></i>
-          <span class="hidden sm:inline">Order Now</span>
-        </button>
+      <!-- Dual Currency Switcher & Quick Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Currency Toggle -->
+        <div class="inline-flex rounded-full bg-alabaster p-1 border border-stoneBorder text-xs font-semibold">
+          <button id="btn-inr" onclick="setCurrency('INR')" class="px-2.5 sm:px-3 py-1 rounded-full bg-charcoal text-white transition-all">
+            🇮🇳 INR
+          </button>
+          <button id="btn-usd" onclick="setCurrency('USD')" class="px-2.5 sm:px-3 py-1 rounded-full text-stone-600 hover:text-charcoal transition-all">
+            🌍 USD
+          </button>
+        </div>
 
-        <a href="https://wa.me/919412345678?text=Namaste%20B.R%20Overseas!%20I%20want%20to%20customize%20my%20Bridal%20Chooda." target="_blank" class="p-2.5 rounded-full bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-600 hover:text-white transition-all text-sm" title="Chat on WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
+        <a id="header-whatsapp-btn" href="https://wa.me/919412345678" target="_blank" class="w-9 h-9 rounded-full border border-stoneBorder hover:border-emerald-600 hover:bg-emerald-50 text-emerald-700 flex items-center justify-center transition-all" title="WhatsApp Concierge">
+          <i class="fa-brands fa-whatsapp text-base"></i>
         </a>
       </div>
     </div>
   </header>
 
-  <main class="relative z-10">
-
+  <main>
     <!-- HERO SECTION -->
-    <section class="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden border-b border-gold-500/10">
-      
-      <div class="absolute -top-32 -left-32 w-80 h-80 bg-rose-900/30 rounded-full blur-[110px] pointer-events-none"></div>
-      <div class="absolute top-1/2 -right-32 w-80 h-80 bg-gold-600/20 rounded-full blur-[110px] pointer-events-none"></div>
-
+    <section class="py-12 md:py-20 border-b border-stoneBorder bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <!-- Left Column -->
+          <!-- Left Editorial Content -->
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-400/40 bg-gold-500/10 text-gold-300 text-xs font-semibold tracking-widest uppercase">
-              <i class="fa-solid fa-crown text-gold-400"></i> Firozabad Direct Manufacturer
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-alabaster border border-stoneBorder text-xs font-semibold tracking-wider uppercase text-stone-700">
+              <span class="w-2 h-2 rounded-full bg-sindoor"></span>
+              <span>Direct Manufacturer • Firozabad, India</span>
             </div>
 
-            <h1 class="font-cinzel text-3xl sm:text-5xl xl:text-6xl font-bold leading-tight md:leading-[1.15] text-stone-100">
-              The Chooda She Will Remember <br>
-              <span class="gold-gradient-text italic font-serif font-normal">For A Lifetime.</span>
+            <h1 id="hero-title" class="font-serif text-4xl sm:text-5xl xl:text-6xl font-semibold leading-[1.12] text-charcoal">
+              Heirloom Bridal Chooda, <br>
+              <span class="italic font-normal text-sindoor">Handcrafted for Your Story.</span>
             </h1>
 
-            <p class="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-              Exquisite handmade bridal chooda sets, high-luster kundan bangles, and bespoke wedding jewelry made by master artisans of Firozabad. Customized to your wrist size and shipped directly with full purchase protection.
+            <p id="hero-subtitle" class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              Authentic kundan, velvet, and traditional bridal chooda sets crafted by master artisans in Firozabad. Custom-sized to your wrist and delivered safely across India and worldwide.
             </p>
 
-            <!-- Working Hero Actions -->
+            <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="#collection" class="shimmer-btn w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-royal-950 font-bold text-xs sm:text-sm tracking-wider uppercase shadow-xl hover:shadow-gold-500/30 hover:-translate-y-0.5 transition-all text-center">
-                Explore Bridal Catalog
+              <a href="#collection" class="w-full sm:w-auto px-8 py-4 rounded-lg bg-sindoor hover:bg-sindoorDark text-white font-semibold text-xs uppercase tracking-[0.15em] transition-all text-center shadow-sm">
+                Explore Bridal Collection
               </a>
-              
-              <button onclick="openCheckoutModal(PRODUCTS_DATABASE[0])" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-gold-400/50 bg-royal-900/80 hover:bg-royal-800 text-gold-300 font-semibold text-xs sm:text-sm tracking-wider flex items-center justify-center gap-3 transition-all">
-                <i class="fa-solid fa-credit-card text-gold-400"></i>
-                <span>Direct Checkout & Pay</span>
-              </button>
+              <a id="etsy-store-link" href="https://www.etsy.com" target="_blank" class="w-full sm:w-auto px-7 py-4 rounded-lg border border-stoneBorder bg-alabaster hover:border-charcoal text-charcoal font-semibold text-xs uppercase tracking-[0.15em] flex items-center justify-center gap-2.5 transition-all">
+                <i class="fa-brands fa-etsy text-orange-600 text-sm"></i>
+                <span>Verified Etsy Store</span>
+              </a>
             </div>
 
-            <!-- Guarantee Features -->
-            <div class="pt-6 grid grid-cols-3 gap-3 border-t border-gold-500/20 text-xs text-stone-300 text-center lg:text-left">
-              <div>
-                <p class="font-bold text-gold-300"><i class="fa-solid fa-shield-check mr-1"></i> No Breakage</p>
-                <span class="text-[11px] text-stone-400">Velvet Box Packing</span>
-              </div>
-              <div>
-                <p class="font-bold text-gold-300"><i class="fa-solid fa-gem mr-1"></i> Pure Craft</p>
-                <span class="text-[11px] text-stone-400">Glass & Acrylic Base</span>
-              </div>
-              <div>
-                <p class="font-bold text-gold-300"><i class="fa-solid fa-indian-rupee-sign mr-1"></i> Instant UPI</p>
-                <span class="text-[11px] text-stone-400">Zero Gateway Charges</span>
-              </div>
+            <!-- Regional Shipping & Trust Info Banner -->
+            <div id="regional-trust-note" class="p-4 rounded-xl bg-alabaster border border-stoneBorder text-xs text-stone-600 flex items-center gap-3 text-left">
+              <i class="fa-solid fa-shield-halved text-sindoor text-base"></i>
+              <span id="regional-trust-text"><strong>India Domestic Store:</strong> Enjoy Free Express Shipping across India & Direct UPI / Card Checkout.</span>
             </div>
-
           </div>
 
-          <!-- Right Column: Royal Arch Visualizer Frame -->
-          <div class="lg:col-span-5 flex justify-center">
-            <div class="relative w-full max-w-sm sm:max-w-md">
-              <div class="absolute -inset-1 rounded-t-[140px] rounded-b-2xl bg-gradient-to-b from-gold-400 via-rose-600 to-amber-600 opacity-60 blur-md"></div>
-
-              <div class="relative rounded-t-[136px] rounded-b-2xl bg-royal-900 p-3 sm:p-4 border border-gold-400/50 shadow-2xl overflow-hidden group">
-                <div class="relative rounded-t-[124px] rounded-b-xl overflow-hidden aspect-[4/5] bg-royal-950">
-                  <img id="hero-img-display"
-                       src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80" 
-                       alt="Firozabad Royal Chooda" 
-                       class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  
-                  <div class="absolute inset-0 bg-gradient-to-t from-royal-950 via-transparent to-black/30 pointer-events-none"></div>
-
-                  <div class="absolute top-5 right-5 bg-royal-950/90 border border-gold-400/60 px-3 py-1 rounded-full text-[10px] font-bold text-gold-300 shadow-xl flex items-center gap-1.5 backdrop-blur-md">
-                    <i class="fa-solid fa-sparkles text-gold-400"></i> Pure Firozabad
-                  </div>
-
-                  <!-- Floating Bottom Price Tag Bar -->
-                  <div class="absolute bottom-4 inset-x-4 p-3.5 rounded-xl bg-royal-950/90 backdrop-blur-md border border-gold-500/30 flex items-center justify-between">
-                    <div>
-                      <p class="text-[10px] uppercase tracking-wider text-stone-400">Dulhan Special Set</p>
-                      <p class="font-cinzel text-base sm:text-lg font-bold text-gold-300">₹ 2,499 <span class="text-xs font-normal text-stone-400 line-through">₹ 3,999</span></p>
-                    </div>
-                    <button onclick="openCheckoutModal(PRODUCTS_DATABASE[0])" class="px-3.5 py-2 rounded-lg bg-gradient-to-r from-gold-400 to-gold-600 text-royal-950 font-bold text-xs uppercase tracking-wider transition hover:scale-105 shadow-md">
-                      Buy Now
-                    </button>
-                  </div>
+          <!-- Right Editorial Product Showcase -->
+          <div class="lg:col-span-5">
+            <div class="relative max-w-md mx-auto">
+              <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-alabaster border border-stoneBorder shadow-lg">
+                <img id="hero-featured-img" 
+                     src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80" 
+                     alt="B.R Overseas Bridal Chooda" 
+                     class="w-full h-full object-cover object-center" />
+              </div>
+              
+              <!-- Clean Floating Product Card -->
+              <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:inset-x-6 p-4 rounded-xl bg-white border border-stoneBorder shadow-lg flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest text-stone-400 font-semibold">Signature Set</span>
+                  <h2 id="hero-featured-title" class="font-serif text-lg font-bold text-charcoal">Royal Heritage Kundan Chooda</h2>
+                  <p id="hero-featured-price" class="text-sm font-bold text-sindoor">₹ 2,499</p>
                 </div>
+                <button onclick="openCheckoutModal(SITE_PRODUCTS[0])" class="px-4 py-2.5 rounded-lg bg-charcoal hover:bg-sindoor text-white text-xs font-semibold uppercase tracking-wider transition-colors">
+                  Order
+                </button>
               </div>
             </div>
           </div>
@@ -306,721 +180,549 @@
       </div>
     </section>
 
-    <!-- LIVE PRODUCT CATALOGUE (Rendered dynamically from PRODUCTS_DATABASE) -->
-    <section id="collection" class="py-16 md:py-24 relative">
+    <!-- PRODUCT CATALOGUE -->
+    <section id="collection" class="py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <p class="text-gold-400 font-semibold tracking-widest uppercase text-xs">Direct From Karigar</p>
-          <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-100">
-            Exclusive Bridal Collection
-          </h2>
-          <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto my-3"></div>
-          <p class="text-stone-300 text-sm font-light">
-            Select any bridal chooda to proceed directly to the secure payment checkout or customize it on WhatsApp.
-          </p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-xs uppercase tracking-[0.2em] text-sindoor font-bold">Curated Catalogue</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal mt-1">
+              Bridal Chooda & Bangles
+            </h2>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="flex flex-wrap gap-2">
+            <button class="filter-tab active px-4 py-2 rounded-full bg-charcoal text-white text-xs font-semibold tracking-wider uppercase" data-category="all">All</button>
+            <button class="filter-tab px-4 py-2 rounded-full bg-white border border-stoneBorder text-stone-600 hover:border-charcoal text-xs font-semibold tracking-wider uppercase" data-category="kundan">Kundan</button>
+            <button class="filter-tab px-4 py-2 rounded-full bg-white border border-stoneBorder text-stone-600 hover:border-charcoal text-xs font-semibold tracking-wider uppercase" data-category="velvet">Velvet</button>
+            <button class="filter-tab px-4 py-2 rounded-full bg-white border border-stoneBorder text-stone-600 hover:border-charcoal text-xs font-semibold tracking-wider uppercase" data-category="classic">Classic Red</button>
+          </div>
         </div>
 
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
-          <button class="filter-tab active px-4 py-2 rounded-full border border-gold-400 bg-gold-500 text-royal-950 font-semibold text-xs uppercase tracking-wider" data-category="all">All Sets</button>
-          <button class="filter-tab px-4 py-2 rounded-full border border-gold-500/30 bg-royal-900/60 hover:border-gold-400 text-stone-300 font-semibold text-xs uppercase tracking-wider" data-category="kundan">Royal Kundan</button>
-          <button class="filter-tab px-4 py-2 rounded-full border border-gold-500/30 bg-royal-900/60 hover:border-gold-400 text-stone-300 font-semibold text-xs uppercase tracking-wider" data-category="velvet">Velvet Matte</button>
-          <button class="filter-tab px-4 py-2 rounded-full border border-gold-500/30 bg-royal-900/60 hover:border-gold-400 text-stone-300 font-semibold text-xs uppercase tracking-wider" data-category="classic">Classic Red</button>
-        </div>
-
-        <!-- Dynamic Product Container -->
-        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <!-- Cards populated by JavaScript -->
-        </div>
+        <!-- Dynamic Grid -->
+        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
 
       </div>
     </section>
 
-    <!-- WRIST SIZE GUIDE -->
-    <section id="size-guide" class="py-16 bg-royal-900/40 border-y border-gold-500/20">
+    <!-- INTERNATIONAL & INDIAN BANGLE SIZE GUIDE -->
+    <section id="size-guide" class="py-16 bg-white border-y border-stoneBorder">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="glass-card rounded-2xl p-6 sm:p-10">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs uppercase tracking-[0.2em] text-sindoor font-bold">Global Sizing Chart</span>
+            <h3 class="font-serif text-3xl font-bold text-charcoal">
+              Find Your Exact Bangle Size
+            </h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Measure the inner diameter of a well-fitting bangle in <strong>Inches</strong> or <strong>Millimeters (mm)</strong> to select your Indian bangle size. Custom sizes are also handcrafted on request.
+            </p>
             
-            <div class="lg:col-span-7 space-y-4">
-              <span class="text-xs uppercase tracking-widest text-gold-400 font-bold">Precision Fitting Guide</span>
-              <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-stone-100">
-                Bridal Wrist Measurement
-              </h3>
-              <p class="text-stone-300 text-sm leading-relaxed">
-                Har dulhan ke haath ka naap alag hota hai. Hum standard sizes ke saath custom wrist size bhi manufacture karte hain taaki shaadi ke din bilkul comfortable fit rahe.
-              </p>
-              
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-center">
-                <div class="p-3 rounded-lg bg-royal-950/80 border border-gold-500/30">
-                  <p class="text-xs text-stone-400 uppercase">Size 2.4</p>
-                  <p class="text-sm font-bold text-gold-300">2.25 Inches</p>
-                </div>
-                <div class="p-3 rounded-lg bg-royal-950/80 border border-gold-500/30">
-                  <p class="text-xs text-stone-400 uppercase">Size 2.6</p>
-                  <p class="text-sm font-bold text-gold-300">2.37 Inches</p>
-                </div>
-                <div class="p-3 rounded-lg bg-royal-950/80 border border-gold-500/30">
-                  <p class="text-xs text-stone-400 uppercase">Size 2.8</p>
-                  <p class="text-sm font-bold text-gold-300">2.50 Inches</p>
-                </div>
-                <div class="p-3 rounded-lg bg-royal-950/80 border border-gold-500/30">
-                  <p class="text-xs text-stone-400 uppercase">Size 2.10</p>
-                  <p class="text-sm font-bold text-gold-300">2.62 Inches</p>
-                </div>
-              </div>
+            <div class="overflow-x-auto pt-2">
+              <table class="w-full text-left border-collapse border border-stoneBorder text-xs">
+                <thead>
+                  <tr class="bg-alabaster text-charcoal uppercase tracking-wider">
+                    <th class="p-3 border border-stoneBorder">Indian Size</th>
+                    <th class="p-3 border border-stoneBorder">Inner Diameter (Inches)</th>
+                    <th class="p-3 border border-stoneBorder">Inner Diameter (mm)</th>
+                  </tr>
+                </thead>
+                <tbody class="text-stone-600">
+                  <tr>
+                    <td class="p-3 border border-stoneBorder font-bold text-charcoal">2.4 (Small)</td>
+                    <td class="p-3 border border-stoneBorder">2.25 in</td>
+                    <td class="p-3 border border-stoneBorder">57.2 mm</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border border-stoneBorder font-bold text-charcoal">2.6 (Medium)</td>
+                    <td class="p-3 border border-stoneBorder">2.37 in</td>
+                    <td class="p-3 border border-stoneBorder">60.3 mm</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border border-stoneBorder font-bold text-charcoal">2.8 (Large)</td>
+                    <td class="p-3 border border-stoneBorder">2.50 in</td>
+                    <td class="p-3 border border-stoneBorder">63.5 mm</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 border border-stoneBorder font-bold text-charcoal">2.10 (XL)</td>
+                    <td class="p-3 border border-stoneBorder">2.62 in</td>
+                    <td class="p-3 border border-stoneBorder">66.7 mm</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
-            <div class="lg:col-span-5 flex flex-col items-center justify-center p-6 bg-royal-950/90 rounded-xl border border-gold-500/30 text-center">
-              <i class="fa-solid fa-tape text-3xl text-gold-400 mb-2"></i>
-              <h4 class="font-serif text-lg font-bold text-stone-200">Size Me Doubt Hai?</h4>
-              <p class="text-xs text-stone-400 mt-1 mb-4">
-                Apne puraane bangle ka scale measurement ya photo WhatsApp par share karein.
-              </p>
-              <a href="https://wa.me/919412345678?text=Hello%20B.R%20Overseas,%20please%20help%20me%20find%20my%20bridal%20chooda%20size." target="_blank" class="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition">
-                <i class="fa-brands fa-whatsapp mr-1"></i> Verify Wrist Size
-              </a>
-            </div>
-
           </div>
+
+          <div class="lg:col-span-5 p-8 rounded-2xl bg-alabaster border border-stoneBorder text-center space-y-4">
+            <div class="w-12 h-12 rounded-full bg-white border border-stoneBorder flex items-center justify-center mx-auto text-sindoor text-lg">
+              <i class="fa-solid fa-ruler"></i>
+            </div>
+            <h4 class="font-serif text-2xl font-bold text-charcoal">Need Sizing Assistance?</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Send a photo of your existing bangle placed next to a ruler on WhatsApp, and our Firozabad workshop team will confirm your exact fit.
+            </p>
+            <a id="size-whatsapp-btn" href="https://wa.me/919412345678?text=Hello%20B.R%20Overseas,%20please%20help%20me%20verify%20my%20bangle%20size." target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-lg bg-charcoal hover:bg-sindoor text-white text-xs font-semibold uppercase tracking-wider transition-colors">
+              <i class="fa-brands fa-whatsapp text-base"></i> Confirm Size on WhatsApp
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- TRUST & HERITAGE SECTION -->
-    <section id="why-us" class="py-20">
+    <!-- BRAND HERITAGE & AUTHENTICITY -->
+    <section id="heritage" class="py-16 md:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <p class="text-gold-400 font-semibold tracking-widest uppercase text-xs">Direct Factory Advantage</p>
-          <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-stone-100">
-            Why Shop From B.R Overseas
-          </h2>
-        </div>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="glass-card rounded-2xl p-7 text-center space-y-3">
-            <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-400/40 flex items-center justify-center mx-auto text-gold-400 text-xl">
-              <i class="fa-solid fa-gem"></i>
-            </div>
-            <h3 class="font-cinzel text-lg font-bold text-stone-100">Firozabad Legacy Karigari</h3>
-            <p class="text-xs text-stone-400 leading-relaxed">
-              Centuries of glass and acrylic bangle mastery. Har stone aur kundan haath se set kiya jata hai.
+          
+          <div class="editorial-card p-8 rounded-2xl space-y-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-sindoor">01 • Registered Brand</span>
+            <h3 class="font-serif text-2xl font-bold text-charcoal">TM Certified & Export Ready</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              B.R Overseas is a registered trademark manufacturer based in Firozabad, Uttar Pradesh—India's historic bangle and glassmaking hub.
             </p>
           </div>
 
-          <div class="glass-card rounded-2xl p-7 text-center space-y-3">
-            <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-400/40 flex items-center justify-center mx-auto text-gold-400 text-xl">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <h3 class="font-cinzel text-lg font-bold text-stone-100">Secure Payment Checkout</h3>
-            <p class="text-xs text-stone-400 leading-relaxed">
-              UPI, Credit/Debit cards, aur WhatsApp tracking ke sath safe payment ecosystem. Zero fraud risk.
+          <div class="editorial-card p-8 rounded-2xl space-y-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-sindoor">02 • Safe Transit</span>
+            <h3 class="font-serif text-2xl font-bold text-charcoal">Cushioned Keepsake Box</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Every bridal set is packed in a hard-shell velvet keepsake box with multi-layer shock protection for zero-breakage domestic & international shipping.
             </p>
           </div>
 
-          <div class="glass-card rounded-2xl p-7 text-center space-y-3">
-            <div class="w-14 h-14 rounded-full bg-gold-500/10 border border-gold-400/40 flex items-center justify-center mx-auto text-gold-400 text-xl">
-              <i class="fa-solid fa-box-archive"></i>
-            </div>
-            <h3 class="font-cinzel text-lg font-bold text-stone-100">Bridal Keepsake Box</h3>
-            <p class="text-xs text-stone-400 leading-relaxed">
-              Premium cushioned velvet box packing ensuring 100% damage-free delivery pan-India and globally.
+          <div class="editorial-card p-8 rounded-2xl space-y-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-sindoor">03 • Transparent Pricing</span>
+            <h3 class="font-serif text-2xl font-bold text-charcoal">Direct Artisan Value</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              No middleman markups. Domestic INR prices include free Indian shipping, while global USD prices include tracked international air courier.
             </p>
           </div>
+
         </div>
-
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-royal-950 border-t border-gold-500/20 py-10 relative z-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-      <p class="font-cinzel text-2xl font-bold text-gold-400 tracking-wider">B.R OVERSEAS</p>
-      <p class="text-xs text-stone-400 uppercase tracking-widest">Bridal Chooda Manufacturer • Firozabad (U.P.), India</p>
-
-      <div class="flex justify-center items-center gap-6 text-xs text-stone-400">
-        <a href="#collection" class="hover:text-gold-300">Catalogue</a>
-        <span>•</span>
-        <a href="#size-guide" class="hover:text-gold-300">Wrist Sizes</a>
-        <span>•</span>
-        <a href="https://wa.me/919412345678" target="_blank" class="hover:text-gold-300">WhatsApp Support</a>
+  <footer class="bg-white border-t border-stoneBorder py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <p class="font-serif text-2xl font-bold tracking-widest text-charcoal uppercase">B.R Overseas</p>
+        <p class="text-xs text-stone-500 mt-1">Registered Trademark Brand • Manufacturing Unit: Firozabad, Uttar Pradesh, India</p>
       </div>
-
-      <p class="text-[11px] text-stone-500">
-        © <span id="current-year">2026</span> B.R Overseas (broverseas.in). Handcrafted in Firozabad.
-      </p>
+      <div class="text-xs text-stone-500 space-y-1 md:text-right">
+        <p>Official Storefront: <strong class="text-charcoal">broverseas.in</strong></p>
+        <p>© <span id="current-year">2026</span> B.R Overseas. All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- ========================================================
-       2. PROFESSIONAL PAYMENT GATEWAY CHECKOUT MODAL / LANDING
-       ======================================================== -->
-  <div id="checkout-drawer" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-    <div class="glass-card max-w-2xl w-full rounded-2xl border border-gold-400 shadow-2xl relative overflow-hidden my-auto">
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-drawer" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white max-w-xl w-full rounded-2xl border border-stoneBorder shadow-2xl overflow-hidden my-auto">
       
       <!-- Modal Header -->
-      <div class="p-5 sm:p-6 bg-gradient-to-r from-royal-950 via-royal-900 to-royal-950 border-b border-gold-500/25 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400">
-            <i class="fa-solid fa-lock"></i>
-          </div>
-          <div>
-            <h3 class="font-cinzel text-lg sm:text-xl font-bold text-stone-100">Secure Bridal Checkout</h3>
-            <p class="text-[11px] text-stone-400">B.R Overseas Verified Payment Gateway</p>
-          </div>
+      <div class="px-6 py-4 bg-alabaster border-b border-stoneBorder flex items-center justify-between">
+        <div>
+          <h3 class="font-serif text-xl font-bold text-charcoal">Direct Order & Checkout</h3>
+          <p class="text-[11px] text-stone-500" id="checkout-mode-label">B.R Overseas • Firozabad Direct</p>
         </div>
-        <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-royal-900 border border-stone-600 text-stone-300 hover:text-white flex items-center justify-center text-sm">
+        <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-white border border-stoneBorder text-stone-600 hover:text-charcoal flex items-center justify-center">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
-      <!-- Checkout Step 1: Customer & Product Details Form -->
-      <div id="checkout-form-step" class="p-5 sm:p-7 space-y-6 max-h-[75vh] overflow-y-auto">
+      <!-- Step 1: Details Form -->
+      <div id="checkout-form-step" class="p-6 space-y-5 max-h-[80vh] overflow-y-auto">
         
-        <!-- Selected Product Summary Box -->
-        <div class="p-4 rounded-xl bg-royal-950/80 border border-gold-500/30 flex items-center gap-4">
-          <img id="checkout-prod-thumb" src="" alt="Selected Chooda" class="w-16 h-16 rounded-lg object-cover border border-gold-500/30" />
+        <div class="p-3.5 rounded-xl bg-alabaster border border-stoneBorder flex items-center gap-4">
+          <img id="checkout-prod-thumb" src="" alt="Product" class="w-16 h-16 rounded-lg object-cover border border-stoneBorder" />
           <div class="flex-1 min-w-0">
-            <h4 id="checkout-prod-name" class="font-cinzel text-sm sm:text-base font-bold text-stone-100 truncate">Product Name</h4>
+            <h4 id="checkout-prod-name" class="font-serif text-base font-bold text-charcoal truncate">Product</h4>
             <div class="flex items-center gap-2 mt-1">
-              <span id="checkout-prod-price" class="text-base font-bold text-gold-400">₹ 0</span>
-              <span class="text-xs text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 px-2 py-0.5 rounded-full">Free Express Shipping</span>
+              <span id="checkout-prod-price" class="text-base font-bold text-sindoor">₹ 0</span>
+              <span id="checkout-shipping-pill" class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-medium">Free India Shipping</span>
             </div>
           </div>
         </div>
 
-        <!-- Form Fields -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-          
           <div class="sm:col-span-2">
-            <label class="block uppercase tracking-wider text-stone-300 font-semibold mb-1.5">Bride / Customer Name *</label>
-            <input type="text" id="cust-name" required placeholder="Enter full name" class="w-full px-4 py-2.5 rounded-lg bg-royal-950/90 border border-stone-700 text-stone-100 focus:border-gold-400 focus:outline-none" />
+            <label class="block font-semibold text-charcoal mb-1">Full Name *</label>
+            <input type="text" id="cust-name" placeholder="Bride / Recipient Name" class="w-full px-3.5 py-2.5 rounded-lg border border-stoneBorder focus:border-charcoal focus:outline-none" />
           </div>
 
           <div>
-            <label class="block uppercase tracking-wider text-stone-300 font-semibold mb-1.5">Mobile Number (WhatsApp) *</label>
-            <input type="tel" id="cust-phone" required placeholder="10-digit mobile number" class="w-full px-4 py-2.5 rounded-lg bg-royal-950/90 border border-stone-700 text-stone-100 focus:border-gold-400 focus:outline-none" />
+            <label class="block font-semibold text-charcoal mb-1">WhatsApp / Phone *</label>
+            <input type="tel" id="cust-phone" placeholder="With country code if outside India" class="w-full px-3.5 py-2.5 rounded-lg border border-stoneBorder focus:border-charcoal focus:outline-none" />
           </div>
 
           <div>
-            <label class="block uppercase tracking-wider text-stone-300 font-semibold mb-1.5">Delivery Pincode *</label>
-            <input type="text" id="cust-pincode" required placeholder="6-digit PIN code" class="w-full px-4 py-2.5 rounded-lg bg-royal-950/90 border border-stone-700 text-stone-100 focus:border-gold-400 focus:outline-none" />
+            <label class="block font-semibold text-charcoal mb-1">Postal / PIN Code *</label>
+            <input type="text" id="cust-pincode" placeholder="PIN / ZIP Code" class="w-full px-3.5 py-2.5 rounded-lg border border-stoneBorder focus:border-charcoal focus:outline-none" />
           </div>
 
           <div class="sm:col-span-2">
-            <label class="block uppercase tracking-wider text-stone-300 font-semibold mb-1.5">Full Delivery Address *</label>
-            <textarea id="cust-address" rows="2" placeholder="House/Flat No, Landmark, City, State" class="w-full px-4 py-2.5 rounded-lg bg-royal-950/90 border border-stone-700 text-stone-100 focus:border-gold-400 focus:outline-none"></textarea>
+            <label class="block font-semibold text-charcoal mb-1">Complete Delivery Address *</label>
+            <textarea id="cust-address" rows="2" placeholder="Street, City, State, Country" class="w-full px-3.5 py-2.5 rounded-lg border border-stoneBorder focus:border-charcoal focus:outline-none"></textarea>
           </div>
 
-          <!-- Chooda Size Selector -->
           <div class="sm:col-span-2">
-            <label class="block uppercase tracking-wider text-stone-300 font-semibold mb-2">Select Wrist Size *</label>
-            <div class="grid grid-cols-4 gap-2 text-center" id="checkout-size-selector">
-              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-gold-400 bg-gold-500 text-royal-950 font-bold" data-size="2.4">2.4</button>
-              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-stone-700 bg-royal-950 text-stone-300 font-medium hover:border-gold-400" data-size="2.6">2.6</button>
-              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-stone-700 bg-royal-950 text-stone-300 font-medium hover:border-gold-400" data-size="2.8">2.8</button>
-              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-stone-700 bg-royal-950 text-stone-300 font-medium hover:border-gold-400" data-size="Custom">Custom</button>
+            <label class="block font-semibold text-charcoal mb-1.5">Select Bangle Size *</label>
+            <div class="grid grid-cols-5 gap-2 text-center" id="checkout-size-selector">
+              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-charcoal bg-charcoal text-white font-semibold" data-size="2.4">2.4</button>
+              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-stoneBorder bg-white text-stone-700 hover:border-charcoal" data-size="2.6">2.6</button>
+              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-stoneBorder bg-white text-stone-700 hover:border-charcoal" data-size="2.8">2.8</button>
+              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-stoneBorder bg-white text-stone-700 hover:border-charcoal" data-size="2.10">2.10</button>
+              <button type="button" class="checkout-size-btn py-2 rounded-lg border border-stoneBorder bg-white text-stone-700 hover:border-charcoal" data-size="Custom">Custom</button>
             </div>
           </div>
-
-          <!-- Payment Mode Selection -->
-          <div class="sm:col-span-2 pt-2">
-            <label class="block uppercase tracking-wider text-stone-300 font-semibold mb-2">Choose Payment Option</label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              
-              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-gold-400/60 bg-royal-950/80 cursor-pointer">
-                <input type="radio" name="paymethod" value="upi" checked class="text-gold-500 focus:ring-0">
-                <div class="text-left">
-                  <p class="font-bold text-stone-100 text-xs sm:text-sm flex items-center gap-1.5">
-                    <i class="fa-solid fa-qrcode text-gold-400"></i> Instant UPI QR Pay
-                  </p>
-                  <p class="text-[10px] text-stone-400">GPay, PhonePe, Paytm (Fastest)</p>
-                </div>
-              </label>
-
-              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-700 bg-royal-950/80 cursor-pointer hover:border-gold-400/40">
-                <input type="radio" name="paymethod" value="gateway" class="text-gold-500 focus:ring-0">
-                <div class="text-left">
-                  <p class="font-bold text-stone-100 text-xs sm:text-sm flex items-center gap-1.5">
-                    <i class="fa-solid fa-credit-card text-gold-400"></i> Cards / NetBanking
-                  </p>
-                  <p class="text-[10px] text-stone-400">Razorpay / Cashfree Gateway</p>
-                </div>
-              </label>
-
-            </div>
-          </div>
-
         </div>
 
-        <!-- Action Button -->
-        <button onclick="processToPaymentLanding()" class="shimmer-btn w-full py-4 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-royal-950 font-extrabold text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
-          <span>Proceed To Payment</span>
-          <i class="fa-solid fa-arrow-right"></i>
+        <button id="checkout-submit-btn" onclick="processCheckoutAction()" class="w-full py-3.5 rounded-lg bg-sindoor hover:bg-sindoorDark text-white font-semibold text-xs uppercase tracking-widest transition-colors">
+          Proceed to Payment
         </button>
-
       </div>
 
-      <!-- Checkout Step 2: Payment Gateway Landing (Interactive QR & Gateway Simulator) -->
-      <div id="checkout-payment-step" class="hidden p-6 sm:p-8 space-y-6 text-center">
-        
-        <div class="space-y-1">
-          <p class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Payment Gateway Portal</p>
-          <h4 class="font-cinzel text-xl font-bold text-stone-100">Scan & Pay via any UPI App</h4>
-          <p class="text-xs text-stone-300">Amount to pay: <strong id="qr-amount-display" class="text-gold-300 text-base">₹ 2,499</strong></p>
+      <!-- Step 2: UPI QR Payment (For India INR Mode) -->
+      <div id="checkout-payment-step" class="hidden p-6 space-y-5 text-center">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-sindoor font-bold">Instant UPI Checkout</span>
+          <h4 class="font-serif text-2xl font-bold text-charcoal mt-1">Scan & Pay <span id="qr-amount-display">₹ 2,499</span></h4>
+          <p class="text-xs text-stone-500">Use GPay, PhonePe, Paytm, or any UPI App</p>
         </div>
 
-        <!-- Dynamic UPI QR Code Display -->
-        <div class="p-4 bg-white rounded-2xl w-56 h-56 mx-auto shadow-2xl flex flex-col items-center justify-center border-4 border-gold-400">
-          <img id="dynamic-upi-qr" src="" alt="UPI Payment QR" class="w-48 h-48 object-contain" />
+        <div class="p-3 bg-white rounded-xl w-48 h-48 mx-auto border border-stoneBorder shadow-sm flex items-center justify-center">
+          <img id="dynamic-upi-qr" src="" alt="UPI QR" class="w-44 h-44 object-contain" />
         </div>
 
-        <div class="flex items-center justify-center gap-3 text-xs text-stone-300">
-          <span class="flex items-center gap-1"><i class="fa-brands fa-google-pay text-base text-gold-300"></i> GPay</span>
-          <span>•</span>
-          <span class="flex items-center gap-1"><i class="fa-solid fa-bolt text-base text-purple-400"></i> PhonePe</span>
-          <span>•</span>
-          <span class="flex items-center gap-1"><i class="fa-solid fa-wallet text-base text-sky-400"></i> Paytm</span>
+        <div class="p-2.5 bg-alabaster rounded-lg border border-stoneBorder text-xs flex items-center justify-between max-w-xs mx-auto">
+          <span>UPI: <strong id="merchant-upi-id">broverseas@upi</strong></span>
+          <button onclick="copyUpiId()" class="px-2.5 py-1 bg-charcoal text-white rounded text-[11px]">Copy</button>
         </div>
 
-        <!-- UPI ID copy helper -->
-        <div class="p-3 bg-royal-950/90 rounded-xl border border-gold-500/20 text-xs flex items-center justify-between max-w-sm mx-auto">
-          <span class="text-stone-300">UPI ID: <strong id="merchant-upi-id" class="text-gold-300">broverseas@upi</strong></span>
-          <button onclick="copyUpiId()" class="px-2.5 py-1 bg-gold-500/20 hover:bg-gold-500 text-gold-300 hover:text-royal-950 font-bold rounded text-[11px] transition">
-            Copy
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button onclick="completeOrderSuccess()" class="flex-1 py-3 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider">
+            I Have Paid • Confirm Order
+          </button>
+          <button onclick="backToFormStep()" class="py-3 px-4 rounded-lg border border-stoneBorder text-stone-600 text-xs font-semibold">
+            Back
           </button>
         </div>
-
-        <!-- Action Buttons in Payment Gateway -->
-        <div class="pt-2 flex flex-col sm:flex-row gap-3">
-          <button onclick="completeOrderSuccess()" class="flex-1 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
-            <i class="fa-solid fa-circle-check"></i>
-            <span>I Have Paid (Confirm Order)</span>
-          </button>
-          
-          <button onclick="backToFormStep()" class="py-3.5 px-5 rounded-xl bg-royal-900 border border-stone-700 text-stone-400 hover:text-white text-xs uppercase font-medium">
-            Edit Details
-          </button>
-        </div>
-
       </div>
 
-      <!-- Checkout Step 3: Success Confirmation Receipt -->
-      <div id="checkout-success-step" class="hidden p-6 sm:p-8 space-y-6 text-center">
-        
-        <div class="w-16 h-16 rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto text-3xl animate-bounce">
+      <!-- Step 3: Order Confirmed -->
+      <div id="checkout-success-step" class="hidden p-6 space-y-5 text-center">
+        <div class="w-14 h-14 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center mx-auto text-2xl">
           <i class="fa-solid fa-check"></i>
         </div>
-
-        <div class="space-y-1">
-          <p class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Order Received Successfully!</p>
-          <h4 class="font-cinzel text-xl sm:text-2xl font-bold text-stone-100">Thank You, Royal Bride</h4>
-          <p class="text-xs text-stone-300">Your handcrafted bridal chooda has been queued for production in Firozabad.</p>
+        <div>
+          <h4 class="font-serif text-2xl font-bold text-charcoal">Order Request Logged</h4>
+          <p class="text-xs text-stone-600 mt-1">Order Ref: <strong id="receipt-order-id" class="text-sindoor">BRO-1001</strong></p>
         </div>
-
-        <!-- Receipt Card -->
-        <div class="p-4 rounded-xl bg-royal-950/90 border border-gold-500/30 text-left space-y-2 text-xs text-stone-300 max-w-md mx-auto">
-          <div class="flex justify-between border-b border-gold-500/15 pb-2">
-            <span class="text-stone-400">Order ID:</span>
-            <strong id="receipt-order-id" class="text-gold-300">BRO-98231</strong>
-          </div>
-          <div class="flex justify-between border-b border-gold-500/15 pb-2">
-            <span class="text-stone-400">Product:</span>
-            <span id="receipt-prod-name" class="font-medium">Chooda Set</span>
-          </div>
-          <div class="flex justify-between border-b border-gold-500/15 pb-2">
-            <span class="text-stone-400">Wrist Size:</span>
-            <span id="receipt-size" class="text-gold-300 font-bold">2.6</span>
-          </div>
-          <div class="flex justify-between pt-1 font-bold text-sm">
-            <span class="text-stone-200">Amount Paid:</span>
-            <span id="receipt-amount" class="text-gold-400">₹ 2,499</span>
-          </div>
-        </div>
-
-        <div class="space-y-3 max-w-md mx-auto">
-          <button id="success-whatsapp-btn" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>Send Order Copy to WhatsApp</span>
-          </button>
-          
-          <button onclick="closeCheckoutModal()" class="w-full py-2.5 text-xs text-stone-400 hover:text-gold-300">
-            Back to Website
-          </button>
-        </div>
-
+        <button id="success-whatsapp-btn" class="w-full py-3.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i> Send Order Details on WhatsApp
+        </button>
       </div>
 
     </div>
   </div>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <aside class="fixed bottom-6 right-6 z-40">
-    <a href="https://wa.me/919412345678?text=Namaste%20B.R%20Overseas,%20I%20have%20an%20inquiry%20regarding%20Bridal%20Chooda." 
-       target="_blank" 
-       aria-label="Order on WhatsApp"
-       class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 hover:bg-emerald-400 transition-all shadow-emerald-950 relative">
-      <span class="absolute -top-1 -right-1 flex h-4 w-4">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-400"></span>
-      </span>
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-  </aside>
-
-  <!-- ========================================================
-       3. JAVASCRIPT LOGIC (Configured so you NEVER touch HTML)
-       ======================================================== -->
   <script>
-    // -------------------------------------------------------------
-    // MASTER PRODUCTS DATABASE
-    // Naya product jodna ho toh bas yahan 1 block copy-paste karein!
-    // -------------------------------------------------------------
-    window.PRODUCTS_DATABASE = [
+    // DEFAULT FALLBACK DATA (Automatically overridden by site-data.json from Admin Panel)
+    let SITE_CONFIG = {
+      whatsapp: "919412345678",
+      upi: "broverseas@upi",
+      etsyUrl: "https://www.etsy.com",
+      announcement: "Registered Trademark Brand • Handcrafted in Firozabad, India",
+      heroTitle: "Heirloom Bridal Chooda, Handcrafted for Your Story.",
+      heroSubtitle: "Authentic kundan, velvet, and traditional bridal chooda sets crafted by master artisans in Firozabad. Custom-sized to your wrist and delivered safely across India and worldwide."
+    };
+
+    let SITE_PRODUCTS = [
       {
         id: "BRO-101",
         title: "Royal Heritage Kundan Chooda",
         category: "kundan",
-        price: 2499,
-        originalPrice: 3999,
+        priceInr: 2499,
+        compareInr: 3999,
+        priceUsd: 59,
+        compareUsd: 89,
         image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80",
         badge: "Bestseller",
-        sizes: ["2.4", "2.6", "2.8"]
+        inStock: true
       },
       {
         id: "BRO-102",
         title: "Deep Maroon Matte Velvet Set",
         category: "velvet",
-        price: 1899,
-        originalPrice: 2899,
+        priceInr: 1899,
+        compareInr: 2899,
+        priceUsd: 48,
+        compareUsd: 72,
         image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80",
         badge: "Trending",
-        sizes: ["2.4", "2.6", "2.8", "2.10"]
+        inStock: true
       },
       {
         id: "BRO-103",
         title: "Traditional Punjabi Red Chooda",
         category: "classic",
-        price: 1599,
-        originalPrice: 2499,
+        priceInr: 1599,
+        compareInr: 2499,
+        priceUsd: 42,
+        compareUsd: 65,
         image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=700&q=80",
-        badge: "Pure Classic",
-        sizes: ["2.4", "2.6", "2.8"]
-      },
-      {
-        id: "BRO-104",
-        title: "Maharani Pearl & Kundan Kara Chooda",
-        category: "kundan",
-        price: 2999,
-        originalPrice: 4500,
-        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80",
-        badge: "Luxury Edition",
-        sizes: ["2.4", "2.6", "2.8"]
-      },
-      {
-        id: "BRO-105",
-        title: "Crimson Silk Thread Designer Chooda",
-        category: "velvet",
-        price: 2199,
-        originalPrice: 3200,
-        image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=700&q=80",
-        badge: "Artisan Pick",
-        sizes: ["2.4", "2.6", "2.8"]
-      },
-      {
-        id: "BRO-106",
-        title: "Gold Foil Traditional Dulhan Chooda",
-        category: "classic",
-        price: 1799,
-        originalPrice: 2699,
-        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80",
-        badge: "Firozabad Special",
-        sizes: ["2.4", "2.6", "2.8"]
+        badge: "Classic",
+        inStock: true
       }
     ];
 
-    const BUSINESS_PHONE = "919412345678"; // Apna WhatsApp Number yahan dalein
-    const MERCHANT_UPI = "broverseas@upi"; // Apna official UPI VPA yahan dalein
+    let activeCurrency = "INR";
+    let currentCategory = "all";
+    let selectedProduct = SITE_PRODUCTS[0];
+    let selectedSize = "2.4";
 
-    // -------------------------------------------------------------
-    // 1. VERTICAL NEON PROGRESS & GLOW TRACKER (Fixed & Moving)
-    // -------------------------------------------------------------
-    const verticalProgress = document.getElementById("vertical-neon-progress");
-    const verticalOrb = document.getElementById("vertical-neon-orb");
-
-    window.addEventListener("scroll", () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolledRatio = Math.min(Math.max(winScroll / (docHeight || 1), 0), 1);
-      const scrolledPercent = scrolledRatio * 100;
-
-      if (verticalProgress) {
-        verticalProgress.style.height = scrolledPercent + "%";
-      }
-      if (verticalOrb) {
-        verticalOrb.style.top = scrolledPercent + "%";
-      }
-    });
-
-    // -------------------------------------------------------------
-    // 2. RENDER CATALOGUE FROM DATABASE
-    // -------------------------------------------------------------
-    const productContainer = document.getElementById("product-container");
-
-    function renderCatalogue(category = "all") {
-      if (!productContainer) return;
-      productContainer.innerHTML = "";
-
-      const items = category === "all" 
-        ? PRODUCTS_DATABASE 
-        : PRODUCTS_DATABASE.filter(p => p.category === category);
-
-      items.forEach(p => {
-        const card = document.createElement("div");
-        card.className = "glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-1.5";
+    // 1. FETCH LIVE DATA FROM ADMIN PANEL (site-data.json)
+    async function loadLiveSiteData() {
+      try {
+        const response = await fetch('./site-data.json?t=' + Date.now());
+        if (!response.ok) return;
+        const data = await response.json();
         
+        if (data && data.settings) {
+          SITE_CONFIG = { ...SITE_CONFIG, ...data.settings };
+          document.getElementById("dynamic-announcement").innerText = SITE_CONFIG.announcement;
+          if (SITE_CONFIG.heroTitle) document.getElementById("hero-title").innerText = SITE_CONFIG.heroTitle;
+          if (SITE_CONFIG.heroSubtitle) document.getElementById("hero-subtitle").innerText = SITE_CONFIG.heroSubtitle;
+          if (SITE_CONFIG.etsyUrl) document.getElementById("etsy-store-link").href = SITE_CONFIG.etsyUrl;
+          if (SITE_CONFIG.whatsapp) {
+            document.getElementById("header-whatsapp-btn").href = `https://wa.me/${SITE_CONFIG.whatsapp}`;
+            document.getElementById("size-whatsapp-btn").href = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Hello B.R Overseas, please help me verify my bangle size.')}`;
+          }
+          if (SITE_CONFIG.upi) document.getElementById("merchant-upi-id").innerText = SITE_CONFIG.upi;
+        }
+
+        if (data && Array.isArray(data.products) && data.products.length > 0) {
+          SITE_PRODUCTS = data.products.map(p => ({
+            id: p.id || "BRO-ITEM",
+            title: p.title || "Bridal Chooda",
+            category: (p.category || "kundan").toLowerCase(),
+            priceInr: Number(p.priceInr || p.price || 1999),
+            compareInr: Number(p.compareInr || p.originalPrice || 2999),
+            priceUsd: Number(p.priceUsd || Math.round((Number(p.priceInr || 1999) / 84) + 22)),
+            compareUsd: Number(p.compareUsd || Math.round((Number(p.compareInr || 2999) / 84) + 30)),
+            image: p.image || "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80",
+            badge: p.badge || "Handcrafted",
+            inStock: p.inStock !== false
+          }));
+        }
+      } catch (e) {
+        console.log("Using default catalog until site-data.json is populated.");
+      }
+
+      updateHeroSpotlight();
+      renderCatalogue();
+    }
+
+    function updateHeroSpotlight() {
+      if (!SITE_PRODUCTS.length) return;
+      const featured = SITE_PRODUCTS[0];
+      document.getElementById("hero-featured-img").src = featured.image;
+      document.getElementById("hero-featured-title").innerText = featured.title;
+      document.getElementById("hero-featured-price").innerText = activeCurrency === "INR" 
+        ? `₹ ${featured.priceInr.toLocaleString('en-IN')}` 
+        : `$ ${featured.priceUsd} USD (Incl. Express Air Shipping)`;
+    }
+
+    // 2. DUAL CURRENCY SWITCHER (INR vs USD)
+    function setCurrency(curr) {
+      activeCurrency = curr;
+      const btnInr = document.getElementById("btn-inr");
+      const btnUsd = document.getElementById("btn-usd");
+      const trustText = document.getElementById("regional-trust-text");
+
+      if (curr === "INR") {
+        btnInr.className = "px-2.5 sm:px-3 py-1 rounded-full bg-charcoal text-white transition-all";
+        btnUsd.className = "px-2.5 sm:px-3 py-1 rounded-full text-stone-600 hover:text-charcoal transition-all";
+        trustText.innerHTML = "<strong>India Domestic Store:</strong> Enjoy Free Express Shipping across India & Direct UPI / Card Checkout.";
+      } else {
+        btnUsd.className = "px-2.5 sm:px-3 py-1 rounded-full bg-charcoal text-white transition-all";
+        btnInr.className = "px-2.5 sm:px-3 py-1 rounded-full text-stone-600 hover:text-charcoal transition-all";
+        trustText.innerHTML = "<strong>International Store (USA, UK, Canada, UAE):</strong> USD prices include Tracked Express Air Shipping (5–7 Days) & Export Protective Box Packaging.";
+      }
+
+      updateHeroSpotlight();
+      renderCatalogue();
+    }
+
+    // 3. RENDER CATALOGUE
+    function renderCatalogue() {
+      const container = document.getElementById("product-container");
+      container.innerHTML = "";
+
+      const filtered = currentCategory === "all" 
+        ? SITE_PRODUCTS 
+        : SITE_PRODUCTS.filter(p => p.category.includes(currentCategory));
+
+      filtered.forEach(p => {
+        const priceDisplay = activeCurrency === "INR" 
+          ? `₹ ${p.priceInr.toLocaleString('en-IN')}` 
+          : `$ ${p.priceUsd} USD`;
+        const compareDisplay = activeCurrency === "INR" 
+          ? `₹ ${p.compareInr.toLocaleString('en-IN')}` 
+          : `$ ${p.compareUsd}`;
+        const shippingSubtext = activeCurrency === "INR"
+          ? "Free India Delivery"
+          : "Incl. International Express Shipping";
+
+        const card = document.createElement("div");
+        card.className = "editorial-card rounded-2xl overflow-hidden flex flex-col justify-between";
         card.innerHTML = `
-          <div class="relative overflow-hidden aspect-square bg-royal-950">
-            <img src="${p.image}" alt="${p.title}" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
-                 onerror="this.src='https://placehold.co/600x600/23050A/F5C742?text=B.R+Overseas'" />
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-royal-950/85 border border-gold-400/40 text-[10px] font-bold text-gold-300 backdrop-blur-md">
-              ${p.badge}
+          <div>
+            <div class="relative aspect-square bg-alabaster overflow-hidden">
+              <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 border border-stoneBorder text-[10px] font-bold uppercase tracking-wider text-charcoal">
+                ${p.badge}
+              </span>
+            </div>
+            <div class="p-5 space-y-2">
+              <p class="text-[10px] uppercase tracking-widest text-stone-400">Firozabad Handcrafted</p>
+              <h3 class="font-serif text-xl font-bold text-charcoal leading-snug">${p.title}</h3>
+              <div class="flex items-baseline gap-2 pt-1">
+                <span class="text-lg font-bold text-sindoor">${priceDisplay}</span>
+                <span class="text-xs text-stone-400 line-through">${compareDisplay}</span>
+              </div>
+              <p class="text-[11px] text-emerald-700 font-medium">${shippingSubtext}</p>
             </div>
           </div>
 
-          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
-            <div>
-              <p class="text-[10px] text-stone-400 uppercase tracking-widest">Handmade In Firozabad</p>
-              <h3 class="font-serif text-lg font-bold text-stone-100 group-hover:text-gold-300 transition-colors">
-                ${p.title}
-              </h3>
-              <div class="flex items-center gap-2 mt-2">
-                <span class="text-xl font-cinzel font-bold text-gold-400">₹ ${p.price.toLocaleString('en-IN')}</span>
-                <span class="text-xs text-stone-500 line-through">₹ ${p.originalPrice.toLocaleString('en-IN')}</span>
-              </div>
-            </div>
-
-            <div class="pt-3 border-t border-gold-500/15 flex items-center gap-2">
-              <button onclick='openCheckoutModal(${JSON.stringify(p)})' class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 text-royal-950 font-bold text-xs uppercase tracking-wider shadow-md hover:scale-102 transition">
-                Buy Now
-              </button>
-              
-              <a href="https://wa.me/${BUSINESS_PHONE}?text=${encodeURIComponent('Hi B.R Overseas, I want to inquire about ' + p.title + ' (₹' + p.price + ')')}" 
-                 target="_blank" 
-                 class="w-10 h-10 rounded-xl bg-emerald-600/30 border border-emerald-500/40 hover:bg-emerald-600 text-emerald-400 hover:text-white flex items-center justify-center text-lg transition">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-            </div>
+          <div class="px-5 pb-5 pt-2 flex items-center gap-2">
+            <button onclick='openCheckoutModal(${JSON.stringify(p).replace(/'/g, "&apos;")})' class="flex-1 py-2.5 rounded-lg bg-charcoal hover:bg-sindoor text-white text-xs font-semibold uppercase tracking-wider transition-colors">
+              ${activeCurrency === "INR" ? "Buy Now" : "Order Global"}
+            </button>
+            <a href="https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Hi B.R Overseas, I am interested in ' + p.title + ' (' + priceDisplay + ')')}" target="_blank" class="w-10 h-10 rounded-lg border border-stoneBorder hover:border-emerald-600 text-emerald-700 flex items-center justify-center">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+            </a>
           </div>
         `;
-        productContainer.appendChild(card);
+        container.appendChild(card);
       });
     }
 
-    renderCatalogue();
-
-    // Category Tabs Logic
-    const tabs = document.querySelectorAll(".filter-tab");
-    tabs.forEach(tab => {
+    // Category Tabs
+    document.querySelectorAll(".filter-tab").forEach(tab => {
       tab.addEventListener("click", () => {
-        tabs.forEach(t => {
-          t.classList.remove("active", "bg-gold-500", "text-royal-950", "border-gold-400");
-          t.classList.add("bg-royal-900/60", "text-stone-300", "border-gold-500/30");
+        document.querySelectorAll(".filter-tab").forEach(t => {
+          t.className = "filter-tab px-4 py-2 rounded-full bg-white border border-stoneBorder text-stone-600 hover:border-charcoal text-xs font-semibold tracking-wider uppercase";
         });
-        tab.classList.add("active", "bg-gold-500", "text-royal-950", "border-gold-400");
-        tab.classList.remove("bg-royal-900/60", "text-stone-300", "border-gold-500/30");
-        renderCatalogue(tab.dataset.category);
+        tab.className = "filter-tab active px-4 py-2 rounded-full bg-charcoal text-white text-xs font-semibold tracking-wider uppercase";
+        currentCategory = tab.dataset.category;
+        renderCatalogue();
       });
     });
 
-    // -------------------------------------------------------------
-    // 3. PAYMENT GATEWAY & CHECKOUT FLOW LOGIC
-    // -------------------------------------------------------------
-    let currentCheckoutProduct = PRODUCTS_DATABASE[0];
-    let selectedChoodaSize = "2.4";
-    let activeOrderId = "";
-
-    const checkoutDrawer = document.getElementById("checkout-drawer");
-    const stepForm = document.getElementById("checkout-form-step");
-    const stepPayment = document.getElementById("checkout-payment-step");
-    const stepSuccess = document.getElementById("checkout-success-step");
-
-    function openCheckoutModal(product) {
-      currentCheckoutProduct = product || PRODUCTS_DATABASE[0];
+    // 4. CHECKOUT FLOW
+    function openCheckoutModal(prod) {
+      selectedProduct = prod || SITE_PRODUCTS[0];
+      document.getElementById("checkout-prod-name").innerText = selectedProduct.title;
+      document.getElementById("checkout-prod-thumb").src = selectedProduct.image;
       
-      document.getElementById("checkout-prod-name").innerText = currentCheckoutProduct.title;
-      document.getElementById("checkout-prod-price").innerText = `₹ ${currentCheckoutProduct.price.toLocaleString('en-IN')}`;
-      document.getElementById("checkout-prod-thumb").src = currentCheckoutProduct.image;
+      if (activeCurrency === "INR") {
+        document.getElementById("checkout-prod-price").innerText = `₹ ${selectedProduct.priceInr.toLocaleString('en-IN')}`;
+        document.getElementById("checkout-shipping-pill").innerText = "Free India Express Shipping";
+        document.getElementById("checkout-submit-btn").innerText = "Proceed to UPI / Payment";
+      } else {
+        document.getElementById("checkout-prod-price").innerText = `$ ${selectedProduct.priceUsd} USD`;
+        document.getElementById("checkout-shipping-pill").innerText = "Includes DHL/FedEx Air Shipping";
+        document.getElementById("checkout-submit-btn").innerText = "Confirm Global Order & Pay Link";
+      }
 
-      // Show form step
-      stepForm.classList.remove("hidden");
-      stepPayment.classList.add("hidden");
-      stepSuccess.classList.add("hidden");
-
-      checkoutDrawer.classList.remove("hidden");
+      document.getElementById("checkout-form-step").classList.remove("hidden");
+      document.getElementById("checkout-payment-step").classList.add("hidden");
+      document.getElementById("checkout-success-step").classList.add("hidden");
+      document.getElementById("checkout-drawer").classList.remove("hidden");
     }
 
     function closeCheckoutModal() {
-      checkoutDrawer.classList.add("hidden");
+      document.getElementById("checkout-drawer").classList.add("hidden");
     }
 
     function backToFormStep() {
-      stepPayment.classList.add("hidden");
-      stepForm.classList.remove("hidden");
+      document.getElementById("checkout-payment-step").classList.add("hidden");
+      document.getElementById("checkout-form-step").classList.remove("hidden");
     }
 
-    // Size button clicks in checkout
-    const checkoutSizeBtns = document.querySelectorAll(".checkout-size-btn");
-    checkoutSizeBtns.forEach(btn => {
+    document.querySelectorAll(".checkout-size-btn").forEach(btn => {
       btn.addEventListener("click", () => {
-        checkoutSizeBtns.forEach(b => {
-          b.classList.remove("bg-gold-500", "text-royal-950", "border-gold-400", "font-bold");
-          b.classList.add("bg-royal-950", "text-stone-300", "border-stone-700", "font-medium");
+        document.querySelectorAll(".checkout-size-btn").forEach(b => {
+          b.className = "checkout-size-btn py-2 rounded-lg border border-stoneBorder bg-white text-stone-700 hover:border-charcoal";
         });
-        btn.classList.add("bg-gold-500", "text-royal-950", "border-gold-400", "font-bold");
-        btn.classList.remove("bg-royal-950", "text-stone-300", "border-stone-700", "font-medium");
-        selectedChoodaSize = btn.dataset.size;
+        btn.className = "checkout-size-btn py-2 rounded-lg border border-charcoal bg-charcoal text-white font-semibold";
+        selectedSize = btn.dataset.size;
       });
     });
 
-    function processToPaymentLanding() {
+    function processCheckoutAction() {
       const name = document.getElementById("cust-name").value.trim();
       const phone = document.getElementById("cust-phone").value.trim();
       const address = document.getElementById("cust-address").value.trim();
       const pincode = document.getElementById("cust-pincode").value.trim();
 
       if (!name || !phone || !address || !pincode) {
-        // Safe UI notification without alert()
-        const btn = document.querySelector("#checkout-form-step button");
-        const originalText = btn.innerHTML;
-        btn.innerHTML = `<span class="text-rose-950 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Please fill all fields!</span>`;
-        btn.classList.add("bg-rose-400");
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.classList.remove("bg-rose-400");
-        }, 2200);
+        const btn = document.getElementById("checkout-submit-btn");
+        const old = btn.innerText;
+        btn.innerText = "Please fill all required fields";
+        setTimeout(() => btn.innerText = old, 2000);
         return;
       }
 
-      // Generate dynamic UPI Payment URL & QR Code
-      const amount = currentCheckoutProduct.price;
-      const orderNote = encodeURIComponent(`B.R Overseas - ${currentCheckoutProduct.title} (Size ${selectedChoodaSize})`);
-      const upiUrl = `upi://pay?pa=${MERCHANT_UPI}&pn=BR%20Overseas&am=${amount}&cu=INR&tn=${orderNote}`;
-      
-      // QR Code Generator using reliable API
-      const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiUrl)}`;
-      document.getElementById("dynamic-upi-qr").src = qrApiUrl;
-      document.getElementById("qr-amount-display").innerText = `₹ ${amount.toLocaleString('en-IN')}`;
-
-      // Switch to Payment step
-      stepForm.classList.add("hidden");
-      stepPayment.classList.remove("hidden");
+      if (activeCurrency === "INR") {
+        const amount = selectedProduct.priceInr;
+        const note = encodeURIComponent(`BR Overseas - ${selectedProduct.title} (${selectedSize})`);
+        const upiUrl = `upi://pay?pa=${SITE_CONFIG.upi}&pn=BR%20Overseas&am=${amount}&cu=INR&tn=${note}`;
+        document.getElementById("dynamic-upi-qr").src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiUrl)}`;
+        document.getElementById("qr-amount-display").innerText = `₹ ${amount.toLocaleString('en-IN')}`;
+        document.getElementById("checkout-form-step").classList.add("hidden");
+        document.getElementById("checkout-payment-step").classList.remove("hidden");
+      } else {
+        completeOrderSuccess();
+      }
     }
 
     function completeOrderSuccess() {
-      activeOrderId = "BRO-" + Math.floor(100000 + Math.random() * 900000);
-      
+      const orderId = "BRO-" + Math.floor(100000 + Math.random() * 900000);
       const name = document.getElementById("cust-name").value.trim();
       const phone = document.getElementById("cust-phone").value.trim();
       const address = document.getElementById("cust-address").value.trim();
       const pincode = document.getElementById("cust-pincode").value.trim();
+      const priceText = activeCurrency === "INR" ? `₹${selectedProduct.priceInr}` : `$${selectedProduct.priceUsd} USD`;
 
-      document.getElementById("receipt-order-id").innerText = activeOrderId;
-      document.getElementById("receipt-prod-name").innerText = currentCheckoutProduct.title;
-      document.getElementById("receipt-size").innerText = selectedChoodaSize;
-      document.getElementById("receipt-amount").innerText = `₹ ${currentCheckoutProduct.price.toLocaleString('en-IN')}`;
-
-      // Pre-filled WhatsApp message for owner
-      const whatsappMsg = `*NEW ORDER CONFIRMED - B.R OVERSEAS*
-• Order ID: ${activeOrderId}
-• Product: ${currentCheckoutProduct.title}
-• Price: ₹${currentCheckoutProduct.price}
-• Wrist Size: ${selectedChoodaSize}
-
-*Customer Details:*
-• Name: ${name}
-• Phone: ${phone}
-• Pincode: ${pincode}
-• Address: ${address}
-
-Payment Status: Verified / UPI Submitted. Please dispatch handcrafted set from Firozabad.`;
+      document.getElementById("receipt-order-id").innerText = orderId;
+      const msg = `*NEW ORDER - B.R OVERSEAS*\nOrder ID: ${orderId}\nProduct: ${selectedProduct.title}\nAmount: ${priceText}\nSize: ${selectedSize}\nName: ${name}\nPhone: ${phone}\nAddress: ${address} (${pincode})`;
 
       document.getElementById("success-whatsapp-btn").onclick = () => {
-        window.open(`https://wa.me/${BUSINESS_PHONE}?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+        window.open(`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
       };
 
-      stepPayment.classList.add("hidden");
-      stepSuccess.classList.remove("hidden");
+      document.getElementById("checkout-form-step").classList.add("hidden");
+      document.getElementById("checkout-payment-step").classList.add("hidden");
+      document.getElementById("checkout-success-step").classList.remove("hidden");
     }
 
     function copyUpiId() {
-      const upiText = MERCHANT_UPI;
-      const tempInput = document.createElement("input");
-      tempInput.value = upiText;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempInput);
-      
-      const upiBadge = document.getElementById("merchant-upi-id");
-      const old = upiBadge.innerText;
-      upiBadge.innerText = "Copied!";
-      setTimeout(() => upiBadge.innerText = old, 1500);
+      navigator.clipboard.writeText(SITE_CONFIG.upi);
+      const el = document.getElementById("merchant-upi-id");
+      el.innerText = "Copied!";
+      setTimeout(() => el.innerText = SITE_CONFIG.upi, 1500);
     }
 
-    // Set Footer Year
     document.getElementById("current-year").innerText = new Date().getFullYear();
-
-    // -------------------------------------------------------------
-    // 4. GOLDEN AMBIENT CANVAS PARTICLES
-    // -------------------------------------------------------------
-    const canvas = document.getElementById("sparkle-canvas");
-    if (canvas) {
-      const ctx = canvas.getContext("2d");
-      let particles = [];
-
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      resizeCanvas();
-      window.addEventListener("resize", resizeCanvas);
-
-      for (let i = 0; i < 35; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 1.5 + 0.4,
-          speedY: Math.random() * 0.4 + 0.1,
-          opacity: Math.random() * 0.7 + 0.2
-        });
-      }
-
-      function drawParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#F7C948";
-        particles.forEach(p => {
-          ctx.globalAlpha = p.opacity;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fill();
-
-          p.y -= p.speedY;
-          if (p.y < 0) {
-            p.y = canvas.height;
-            p.x = Math.random() * canvas.width;
-          }
-        });
-        requestAnimationFrame(drawParticles);
-      }
-      drawParticles();
-    }
+    loadLiveSiteData();
   </script>
-
 </body>
 </html>
